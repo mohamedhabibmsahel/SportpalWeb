@@ -1,5 +1,7 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
-import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { TaskService } from 'app/task.service';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
     selector: 'app-navbar',
@@ -7,14 +9,15 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
     styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+    userconnect:boolean ;
     private toggleButton: any;
     private sidebarVisible: boolean;
-
-    constructor(public location: Location, private element : ElementRef) {
+    constructor(private router :Router,public location: Location, private element : ElementRef,private taskService: TaskService) {
         this.sidebarVisible = false;
     }
 
     ngOnInit() {
+        this.userconnect=localStorage.getItem('user')?true:false;
         const navbar: HTMLElement = this.element.nativeElement;
         this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
     }
@@ -49,7 +52,7 @@ export class NavbarComponent implements OnInit {
     };
     isHome() {
       var titlee = this.location.prepareExternalUrl(this.location.path());
-      if(titlee.charAt(0) === '#'){
+      if(titlee.charAt(0) === ''){
           titlee = titlee.slice( 1 );
       }
         if( titlee === '/home' ) {
@@ -61,7 +64,7 @@ export class NavbarComponent implements OnInit {
     }
     isDocumentation() {
       var titlee = this.location.prepareExternalUrl(this.location.path());
-      if(titlee.charAt(0) === '#'){
+      if(titlee.charAt(0) === ''){
           titlee = titlee.slice( 1 );
       }
         if( titlee === '/documentation' ) {
@@ -70,5 +73,21 @@ export class NavbarComponent implements OnInit {
         else {
             return false;
         }
+    }
+    Getfootballnews(){
+        this.taskService.getfootballnewlist().subscribe((respnse: any)=>{
+            console.log(respnse);
+        });
+    }
+    // Gettennisnews(){
+    //     this.taskService.gettennisnewlist().subscribe((respnse: any)=>{
+    //         console.log(respnse);
+    //     });
+    // }
+    disconnect(){
+        localStorage.clear();
+        this.userconnect=!this.userconnect;
+      
+  
     }
 }

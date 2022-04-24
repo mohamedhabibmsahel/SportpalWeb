@@ -6,17 +6,24 @@ import { Routes, RouterModule } from '@angular/router';
 import { ComponentsComponent } from './components/components.component';
 import { ProfileComponent } from './examples/profile/profile.component';
 import { SignupComponent } from './examples/signup/signup.component';
-import { SigninComponent } from './examples/signin/signin.component';
 import { LandingComponent } from './examples/landing/landing.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
+import { FootballistComponent } from './footballist/footballist.component';
+import { TennislistComponent } from './tennislist/tennislist.component';
+import { TournamentComponent } from './tournament/tournament.component';
+import { UserComponent } from './User/user.component';
+
 
 const routes: Routes =[
     { path: '', redirectTo: 'landing', pathMatch: 'full' },
     { path: 'home',             component: ComponentsComponent },
     { path: 'user-profile',     component: ProfileComponent },
     { path: 'signup',           component: SignupComponent },
-    { path: 'signin',           component: SigninComponent },
     { path: 'landing',          component: LandingComponent },
+    {path:"footballlist",component:FootballistComponent},
+    {path:"tennislist",component:TennislistComponent},
+    {path:"tournament",component:TournamentComponent},
+    {path:"user",component:UserComponent},
     { path: 'nucleoicons',      component: NucleoiconsComponent }
 ];
 

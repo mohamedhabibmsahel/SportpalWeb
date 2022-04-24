@@ -10,6 +10,45 @@
         </div>
     </div>
 </div>
+<!-- list football and tennis -->
+
+<div class="listitem" >
+    <div class="card" style="width: 18rem;" *ngFor="let item of data">
+        <img src={{item.imageURL}} class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title element" >{{item.title}}</h5>
+          <p class="card-text element"
+          >{{item.desc}}</p>
+          <h5 class="card-title">{{item.date | date : "dd.MM.y" }}</h5>
+        </div>
+      </div>
+</div>
+
+  <!-- fin list football and tennis -->
+  <!--test-->
+ <!-- <div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+            <div class="col-md-3">
+                <div class="ibox">
+                    <div class="ibox-content product-box">
+                        <div class="product-imitation">
+                           <img src="./assets/img/faces/juka.jpeg" width="200" height="200" alt="">
+                        </div>
+                        <div class="product-desc">
+                            <span class="product-price">
+                               200 DT
+                            </span>
+                            <a href="#" class="product-name"> titre</a>
+                            <div class="small m-t-xs">
+                                description
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>-->
+  <!--end test-->
 <div class="main">
     <div class="section text-center">
     <div class="container">

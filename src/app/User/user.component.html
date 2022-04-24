@@ -1,0 +1,373 @@
+<div class="page-header" data-parallax="true" style="background-image: url('./assets/img/background.jpeg');">
+    <div class="filter"></div>
+    <div class="container">
+        <div class="motto text-center">
+            <h1>Sportpal</h1>
+            <h3>Join the community.</h3>
+            <br />
+            <a href="https://www.youtube.com/watch?v=lCi2Lzz93dM" class="btn btn-outline-neutral btn-round"><i
+                    class="fa fa-play"></i>Watch video</a>
+            <a href="https://www.apple.com/fr/app-store/" class="btn btn-outline-neutral btn-round"> Download</a>
+        </div>
+    </div>
+</div>
+<!-- list football and tennis -->
+<div class="wrapper p-5" *ngIf="!displayOn">
+   
+        <div class="filter"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                        <form #f="ngForm">
+                            <div class="form-group">
+                                <label>Title</label>
+                                <input class="form-control " type="text" [(ngModel)]="touranamentitem.title"
+                                    [ngModelOptions]="{standalone: true}" />
+                            </div>
+                            <div class="">
+                                <label>TypeSport</label>
+                                <select class="form-control m-b" aria-label="Default select example" [(ngModel)]="touranamentitem.typeSport" [ngModelOptions]="{standalone: true}">
+                                    <option selected value="football">Football</option>
+                                    <option value="tennis">tennis</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="col-form-label">Type Tournament</label>
+                                <select class="form-control m-b " aria-label="Default select example" [(ngModel)]="touranamentitem.type" [ngModelOptions]="{standalone: true}">
+                                    <option selected value="elimination">Elimination</option>
+                                    <option value="points">Points</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label> Participant Number</label>
+                                <input type="number" class="form-control m-b" [(ngModel)]="touranamentitem.numberOfParticipants" [ngModelOptions]="{standalone: true}"/>
+                            </div>
+                            <div>
+                                <label> Prize</label>
+                                <input type="number" class="form-control m-b" [(ngModel)]="touranamentitem.prize " [ngModelOptions]="{standalone: true}"/>
+                            </div>
+                            <div>
+                                <label>Place</label>
+                                <select class="form-control m-b" aria-label="Default select example" [(ngModel)]="touranamentitem.place" [ngModelOptions]="{standalone: true}">
+                                    <option selected value="5445164">terrain tayeb mhiri</option>
+                                    <option value="65131">terrain hammouda hadded</option>
+                                </select>
+                            </div>
+                            <div>
+                                <div class="row col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">from :</label>
+                                        <input type="date" class="form-control m-b" [(ngModel)]="touranamentitem.from" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">to:</label>
+                                        <input type="date" class="form-control m-b" [(ngModel)]="touranamentitem.to" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-4 mr-auto ml-auto">
+                            <button type="submit" class="btn btn-danger btn-lg btn-fill" (click)="savetournament()">Submit</button>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+</div>
+<!-- list tournament-->
+<div class=" mt-5">
+<table class="table" *ngIf="displayOn" >
+    <thead>
+      <tr>
+<th>profilePic</th>
+<th> fullName</th>
+<th> email</th>
+<th> telNum</th>
+<th> isVerified</th>
+<th> address</th>
+<th> birthDate</th>
+<th>gender</th>
+<th>height</th>
+<th> weight</th>
+<th>Actions</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of listUser">
+      <tr >
+        <td>{{item.profilePic}}</td>
+        <td>{{item.fullName}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.telNum}}</td>
+        <td>{{item.isVerified}}</td>
+        <td>{{item.address}}</td>
+        <td>{{item.birthDate}}</td>
+        <td>{{item.gender}}</td>
+        <td>{{item.height}}</td>
+        <td>{{item.weight}}</td>
+        <td>
+            <button class="btn btn-outline-danger" (click)="delete(item._id)">Delete</button>
+
+        </td>
+
+      </tr>
+   
+  </table>
+</div>
+<!-- fin list football and tennis -->
+<!--test-->
+<!-- <div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+            <div class="col-md-3">
+                <div class="ibox">
+                    <div class="ibox-content product-box">
+                        <div class="product-imitation">
+                           <img src="./assets/img/faces/juka.jpeg" width="200" height="200" alt="">
+                        </div>
+                        <div class="product-desc">
+                            <span class="product-price">
+                               200 DT
+                            </span>
+                            <a href="#" class="product-name"> titre</a>
+                            <div class="small m-t-xs">
+                                description
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+  </div>-->
+<!--end test-->
+<div class="main">
+    <div class="section text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mr-auto ml-auto">
+                    <h2 class="title">Who are we?</h2>
+                    <h5 class="description">Websailer is a an academic group founded in Esprit
+                        Always brainstorming for innovative applications, our main goal is to provide</h5>
+                    <br>
+                    <a href="#paper-kit" class="btn btn-danger btn-round">See Details</a>
+                </div>
+            </div>
+            <br /><br />
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="info">
+                        <div class="icon icon-danger">
+                            <i class="nc-icon nc-album-2"></i>
+                        </div>
+                        <div class="description">
+                            <h4 class="info-title">Beautiful Gallery</h4>
+                            <p class="description">Spend your time generating new ideas. You don't have to think of
+                                implementing.</p>
+                            <a href="#pkp" class="btn btn-link btn-danger">See more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info">
+                        <div class="icon icon-danger">
+                            <i class="nc-icon nc-bulb-63"></i>
+                        </div>
+                        <div class="description">
+                            <h4 class="info-title">New Ideas</h4>
+                            <p>Larger, yet dramatically thinner. More powerful, but remarkably power efficient.</p>
+                            <a href="#pkp" class="btn btn-link btn-danger">See more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info">
+                        <div class="icon icon-danger">
+                            <i class="nc-icon nc-chart-bar-32"></i>
+                        </div>
+                        <div class="description">
+                            <h4 class="info-title">Statistics</h4>
+                            <p>Choose from a veriety of many colors resembling sugar paper pastels.</p>
+                            <a href="#pkp" class="btn btn-link btn-danger">See more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info">
+                        <div class="icon icon-danger">
+                            <i class="nc-icon nc-sun-fog-29"></i>
+                        </div>
+                        <div class="description">
+                            <h4 class="info-title">Delightful design</h4>
+                            <p>Find unique and handmade delightful designs related items directly from our sellers.</p>
+                            <a href="#pkp" class="btn btn-link btn-danger">See more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section section-dark text-center">
+        <div class="container">
+            <h2 class="title">Let's talk about us</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card card-profile card-plain">
+                        <div class="card-avatar">
+                            <a href="#avatar"><img src="./assets/img/faces/melek.jpeg" alt="..."></a>
+                        </div>
+                        <div class="card-block">
+                            <a href="#paper-kit">
+                                <div class="author">
+                                    <h4 class="card-title">Mohamed melek CHTOUROU</h4>
+                                    <h6 class="card-category">Product Manager</h6>
+                                </div>
+                            </a>
+                            <p class="card-description text-center">
+                                Teamwork is so important that it is virtually impossible for you to reach the heights of
+                                your capabilities or make the money that you want without becoming very good at it.
+                            </p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="https://www.facebook.com/tiktikatikadesuka"
+                                class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-facebook-square"></i></a>
+                            <a href="https://github.com/mohamedmmc" class="btn btn-link btn-just-icon btn-neutral"><i
+                                    class="fa fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/mohamed-melek-chtourou-13b891170/"
+                                class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card card-profile card-plain">
+                        <div class="card-avatar">
+                            <a href="#avatar"><img src="./assets/img/faces/ghazi.jpeg" alt="..."></a>
+                        </div>
+                        <div class="card-block">
+                            <a href="#paper-kit">
+                                <div class="author">
+                                    <h4 class="card-title">Ghazi Ben hadj yahia</h4>
+                                    <h6 class="card-category">Designer</h6>
+                                </div>
+                            </a>
+                            <p class="card-description text-center">
+                                A group becomes a team when each member is sure enough of himself and his contribution
+                                to praise the skill of the others. No one can whistle a symphony. It takes an orchestra
+                                to play it.
+                            </p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="https://www.facebook.com/ghazi.benhadjyahia"
+                                class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-facebook-square"></i></a>
+                            <a href="https://github.com/Ghazibenhajyahia"
+                                class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/ghazi-ben-hadj-yahia-4864b5227/"
+                                class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-profile card-plain">
+                        <div class="card-avatar">
+                            <a href="#avatar"><img src="./assets/img/faces/seif.jpeg" alt="..."></a>
+                        </div>
+                        <div class="card-block">
+                            <a href="#paper-kit">
+                                <div class="author">
+                                    <h4 class="card-title">Seif eddine Gouider</h4>
+                                    <h6 class="card-category">Designer</h6>
+                                </div>
+                            </a>
+                            <p class="card-description text-center">
+                                A group becomes a team when each member is sure enough of himself and his contribution
+                                to praise the skill of the others. No one can whistle a symphony. It takes an orchestra
+                                to play it.
+                            </p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="https://www.facebook.com/saif.d.gouider"
+                                class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-facebook-square"></i></a>
+                            <a href="https://github.com/gouiderseifeddine"
+                                class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-github"></i></a>
+                            <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i
+                                    class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-profile card-plain">
+                        <div class="card-avatar">
+                            <a href="#avatar"><img src="./assets/img/faces/juka.jpeg" alt="..."></a>
+                        </div>
+                        <div class="card-block">
+                            <a href="#paper-kit">
+                                <div class="author">
+                                    <h4 class="card-title">Mohamed habib M'SAHEL</h4>
+                                    <h6 class="card-category">Developer</h6>
+                                </div>
+                            </a>
+                            <p class="card-description text-center">
+                                The strength of the team is each individual member. The strength of each member is the
+                                team. If you can laugh together, you can work together, silence isn’t golden, it’s
+                                deadly.
+                            </p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="https://www.facebook.com/mohamedhabib.msahel"
+                                class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-facebook-square"></i></a>
+                            <a href="https://github.com/mohamedhabibmsahel"
+                                class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/mohamed-habib-m-sahel-9bb5a0217/"
+                                class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section landing-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mr-auto ml-auto">
+                    <h2 class="text-center">Keep in touch?</h2>
+                    <form class="contact-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Name</label>
+                                <div class="input-group" [ngClass]="{'input-group-focus':focus===true}">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Name" (focus)="focus=true"
+                                        (blur)="focus=false">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Email</label>
+                                <div class="input-group" [ngClass]="{'input-group-focus':focus1===true}">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="nc-icon nc-email-85"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Email" (focus)="focus1=true"
+                                        (blur)="focus1=false">
+                                </div>
+                            </div>
+                        </div>
+                        <label>Message</label>
+                        <textarea class="form-control" rows="4"
+                            placeholder="Tell us your thoughts and feelings..."></textarea>
+                        <div class="row">
+                            <div class="col-md-4 mr-auto ml-auto">
+                                <button class="btn btn-danger btn-lg btn-fill">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+.listitem{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+margin:40px;
+}
+.element {
+    overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+}

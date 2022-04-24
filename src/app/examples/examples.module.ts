@@ -6,8 +6,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LandingComponent } from './landing/landing.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
-import { SigninComponent } from './signin/signin.component';
-
 @NgModule({
     imports: [
         CommonModule,
@@ -17,7 +15,6 @@ import { SigninComponent } from './signin/signin.component';
     declarations: [
         LandingComponent,
         SignupComponent,
-        SigninComponent,
         ProfileComponent
     ]
 })

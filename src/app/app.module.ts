@@ -11,13 +11,22 @@ import { FooterComponent } from './shared/footer/footer.component';
 
 import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './examples/examples.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FootballistComponent } from './footballist/footballist.component';
+import { TennislistComponent } from './tennislist/tennislist.component';
+import { TournamentComponent } from './tournament/tournament.component';
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    FootballistComponent,
+    TennislistComponent,
+    TournamentComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +36,7 @@ import { ExamplesModule } from './examples/examples.module';
     ComponentsModule,
     ExamplesModule,
     AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
